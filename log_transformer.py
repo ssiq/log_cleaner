@@ -81,5 +81,4 @@ if __name__ == '__main__':
             # print '{}'.format(t)
             # print etree.tostring(t)
 
-    with open(to_path, 'w') as f:
-        f.write(log_parsed.to_string())
+    log_parsed.write_xml(to_path)
