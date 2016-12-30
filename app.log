@@ -1,0 +1,190 @@
+2016-08-28 at 23:44:15 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::579:: message ::23:44:14 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp: In function 'int main()':
+../main.cpp:13:2: error: 'cout' was not declared in this scope
+  cout << cal_gcd(20,5) << endl;
+  ^
+../main.cpp:13:27: error: 'endl' was not declared in this scope
+  cout << cal_gcd(20,5) << endl;
+                           ^
+make: *** [main.o] Error 1
+
+23:44:15 Build Finished (took 330ms)
+
+
+2016-08-28 at 23:44:16 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Console (CDT Build Console [Cal_GCD_V2])
+2016-08-28 at 23:44:22 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Project Explorer
+2016-08-28 at 23:44:22 CST - :: action_type ::edit:: operation_type ::select:: type ::structured:: part ::Project Explorer:: selctionContent ::[/Cal_GCD_V2/gcd.cpp file,]
+2016-08-28 at 23:44:23 CST - :: action_type ::edit:: operation_type ::select:: type ::structured:: part ::Project Explorer:: selctionContent ::[/Cal_GCD_V2/main.cpp file,]
+2016-08-28 at 23:44:23 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::main.cpp
+2016-08-28 at 23:44:23 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Console (CDT Build Console [Cal_GCD_V2])
+2016-08-28 at 23:44:30 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::main.cpp
+2016-08-28 at 23:44:38 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: text_length ::20:: text ::using namespace std;
+2016-08-28 at 23:44:38 CST - :: action_type ::edit:: operation_type ::resource:: type ::changed:: resource_path ::/Cal_GCD_V2/main.cpp:: resourceType ::File:: fileRelatePath ::Cal_GCD_V2/main.cpp-7e4db530c1c65bf2bdc43c130ac5e08c-237c9c04784e623c2c526c918f1b8b5f8524481a-1472399078747
+2016-08-28 at 23:44:38 CST - :: action_type ::operation:: operation_type ::excution:: message ::success-org.eclipse.ui.file.save-Object-null
+2016-08-28 at 23:44:47 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::579:: message ::23:44:46 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp: In function 'int main()':
+../main.cpp:13:2: error: 'cout' was not declared in this scope
+  cout << cal_gcd(20,5) << endl;
+  ^
+../main.cpp:13:27: error: 'endl' was not declared in this scope
+  cout << cal_gcd(20,5) << endl;
+                           ^
+make: *** [main.o] Error 1
+
+23:44:47 Build Finished (took 332ms)
+
+
+2016-08-28 at 23:44:53 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Console (CDT Build Console [Cal_GCD_V2])
+2016-08-28 at 23:44:59 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::main.cpp
+2016-08-28 at 23:45:06 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::9,16:: fileOffset ::96:: text_length ::3:: text ::
+j
+2016-08-28 at 23:45:06 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: length ::1
+2016-08-28 at 23:45:08 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: text_length ::2:: text ::im
+2016-08-28 at 23:45:08 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: length ::2
+2016-08-28 at 23:45:09 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: text_length ::2:: text ::@#
+2016-08-28 at 23:45:09 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: length ::2
+2016-08-28 at 23:45:11 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,0:: fileOffset ::98:: text_length ::4:: text ::#inl
+2016-08-28 at 23:45:12 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,3:: fileOffset ::101:: length ::1
+2016-08-28 at 23:45:14 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,3:: fileOffset ::101:: text_length ::8:: text ::clude <>
+2016-08-28 at 23:45:16 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,10:: fileOffset ::108:: text_length ::6:: text ::ioster
+2016-08-28 at 23:45:16 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,14:: fileOffset ::112:: length ::2
+2016-08-28 at 23:45:18 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,14:: fileOffset ::112:: text_length ::4:: text ::ream
+2016-08-28 at 23:45:18 CST - :: action_type ::edit:: operation_type ::resource:: type ::changed:: resource_path ::/Cal_GCD_V2/main.cpp:: resourceType ::File:: fileRelatePath ::Cal_GCD_V2/main.cpp-b733b5cff1f9bd32139ad952ee4e34c6-1afab4abe2b64b051768268050e4c24c491b5a86-1472399118268
+2016-08-28 at 23:45:18 CST - :: action_type ::operation:: operation_type ::excution:: message ::success-org.eclipse.ui.file.save-Object-null
+2016-08-28 at 23:45:19 CST - :: action_type ::edit:: operation_type ::select:: type ::text:: filePath ::Cal_GCD_V2/main.cpp:: offset ::119:: length ::20:: text ::using namespace std;
+2016-08-28 at 23:45:20 CST - :: action_type ::edit:: operation_type ::select:: type ::text:: filePath ::Cal_GCD_V2/main.cpp:: offset ::139:: length ::2:: text ::
+
+2016-08-28 at 23:45:21 CST - :: action_type ::edit:: operation_type ::select:: type ::text:: filePath ::Cal_GCD_V2/main.cpp:: offset ::119:: length ::20:: text ::using namespace std;
+2016-08-28 at 23:45:21 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::10,19:: fileOffset ::117:: length ::22
+2016-08-28 at 23:45:21 CST - :: action_type ::edit:: operation_type ::resource:: type ::changed:: resource_path ::/Cal_GCD_V2/main.cpp:: resourceType ::File:: fileRelatePath ::Cal_GCD_V2/main.cpp-ce4423b17f12a2637116ee54c4a60518-298a23a4da82974849b9e2fe1c79a048b573a199-1472399121957
+2016-08-28 at 23:45:21 CST - :: action_type ::operation:: operation_type ::excution:: message ::success-org.eclipse.ui.file.save-Object-null
+2016-08-28 at 23:45:23 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::1119:: message ::23:45:23 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp: In function 'int main()':
+../main.cpp:13:2: error: 'cout' was not declared in this scope
+  cout << cal_gcd(20,5) << endl;
+  ^
+../main.cpp:13:2: note: suggested alternative:
+In file included from ../main.cpp:10:0:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^
+../main.cpp:13:27: error: 'endl' was not declared in this scope
+  cout << cal_gcd(20,5) << endl;
+                           ^
+../main.cpp:13:27: note: suggested alternative:
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ../main.cpp:10:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:564:5: note:   'std::endl'
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+make: *** [main.o] Error 1
+
+23:45:23 Build Finished (took 429ms)
+
+
+2016-08-28 at 23:45:25 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Console (CDT Build Console [Cal_GCD_V2])
+2016-08-28 at 23:45:35 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::main.cpp
+2016-08-28 at 23:45:40 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::13,1:: fileOffset ::135:: text_length ::5:: text ::std::
+2016-08-28 at 23:45:42 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::13,31:: fileOffset ::165:: text_length ::4:: text ::stdL
+2016-08-28 at 23:45:42 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::13,34:: fileOffset ::168:: length ::1
+2016-08-28 at 23:45:43 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/main.cpp:: location ::13,34:: fileOffset ::168:: text_length ::2:: text ::::
+2016-08-28 at 23:45:43 CST - :: action_type ::edit:: operation_type ::resource:: type ::changed:: resource_path ::/Cal_GCD_V2/main.cpp:: resourceType ::File:: fileRelatePath ::Cal_GCD_V2/main.cpp-034a4711f9f1d67f7c3b224872da0d44-36ee1d5c2fb5ab0dd133624c5a469e86dae3444c-1472399143426
+2016-08-28 at 23:45:43 CST - :: action_type ::operation:: operation_type ::excution:: message ::success-org.eclipse.ui.file.save-Object-null
+2016-08-28 at 23:45:51 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::455:: message ::23:45:49 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+Building target: Cal_GCD_V2
+Invoking: Cross G++ Linker
+g++  -o "Cal_GCD_V2"  ./gcd.o ./main.o   
+Finished building target: Cal_GCD_V2
+
+23:45:51 Build Finished (took 1s.236ms)
+
+
+2016-08-28 at 23:45:52 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Console (CDT Build Console [Cal_GCD_V2])
+2016-08-28 at 23:46:01 CST - :: action_type ::build:: project ::Cal_GCD:: length ::182:: message ::23:46:01 **** Clean-only build of configuration Debug for project Cal_GCD ****
+make clean 
+rm -rf  ./gcd.o ./main.o  ./gcd.d ./main.d  Cal_GCD
+
+23:46:01 Build Finished (took 183ms)
+
+
+2016-08-28 at 23:46:02 CST - :: action_type ::build:: project ::Cal_GCD:: length ::165:: message ::23:46:01 **** Incremental Build of configuration Debug for project Cal_GCD ****
+make all 
+make: Nothing to be done for `all'.
+
+23:46:02 Build Finished (took 230ms)
+
+
+2016-08-28 at 23:46:02 CST - :: action_type ::edit:: operation_type ::resource:: type ::removed:: resource_path ::/Cal_GCD/Debug/gcd.d:: resourceType ::File
+2016-08-28 at 23:46:02 CST - :: action_type ::edit:: operation_type ::resource:: type ::removed:: resource_path ::/Cal_GCD/Debug/gcd.o:: resourceType ::File
+2016-08-28 at 23:46:02 CST - :: action_type ::edit:: operation_type ::resource:: type ::removed:: resource_path ::/Cal_GCD/Debug/main.d:: resourceType ::File
+2016-08-28 at 23:46:02 CST - :: action_type ::edit:: operation_type ::resource:: type ::removed:: resource_path ::/Cal_GCD/Debug/main.o:: resourceType ::File
+2016-08-28 at 23:46:02 CST - :: action_type ::run:: runType::normal:: type ::end:: project ::Cal_GCD:: processId ::1d1c073:: message ::DebugEvent[org.eclipse.cdt.dsf.gdb.launching.InferiorRuntimeProcess@1d1c073, TERMINATE, UNSPECIFIED]
+2016-08-28 at 23:46:02 CST - :: action_type ::run:: runType::normal:: type ::start:: project ::Cal_GCD:: processId ::1d1c073:: message ::DebugEvent[org.eclipse.cdt.dsf.gdb.launching.InferiorRuntimeProcess@1d1c073, CREATE, UNSPECIFIED]
+2016-08-28 at 23:46:09 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::Project Explorer
+2016-08-28 at 23:46:09 CST - :: action_type ::edit:: operation_type ::select:: type ::structured:: part ::Project Explorer:: selctionContent ::[/Cal_GCD_V2/main.cpp file,]
+2016-08-28 at 23:46:09 CST - :: action_type ::edit:: operation_type ::select:: type ::structured:: part ::Project Explorer:: selctionContent ::[Cal_GCD_V2 project,]
+2016-08-28 at 23:46:16 CST - :: action_type ::operation:: operation_type ::excution:: message ::success-org.eclipse.cdt.debug.ui.localCShortcut.run-Object-true
+2016-08-28 at 23:46:55 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::168:: message ::23:46:55 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+make: Nothing to be done for `all'.
+
+23:46:55 Build Finished (took 185ms)
+
+
+2016-08-28 at 23:46:55 CST - :: action_type ::run:: runType::normal:: type ::start:: project ::Cal_GCD_V2:: processId ::1946ded:: message ::DebugEvent[org.eclipse.cdt.dsf.gdb.launching.InferiorRuntimeProcess@1946ded, CREATE, UNSPECIFIED]
+2016-08-28 at 23:46:59 CST - :: action_type ::output:: runType ::normal:: project ::Cal_GCD_V2:: processId ::1946ded:: length ::0:: message ::
+2016-08-28 at 23:46:59 CST - :: action_type ::run:: runType::normal:: type ::end:: project ::Cal_GCD_V2:: processId ::1946ded:: message ::DebugEvent[org.eclipse.cdt.dsf.gdb.launching.InferiorRuntimeProcess@1946ded, TERMINATE, UNSPECIFIED]
+2016-08-28 at 23:47:04 CST - :: action_type ::edit:: operation_type ::select:: type ::structured:: part ::Project Explorer:: selctionContent ::[/Cal_GCD_V2/gcd.cpp file,]
+2016-08-28 at 23:47:05 CST - :: action_type ::operation:: operation_type ::part:: state ::actived:: partLabel ::gcd.cpp
+2016-08-28 at 23:47:08 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: length ::2
+2016-08-28 at 23:47:09 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: text_length ::1:: text ::9
+2016-08-28 at 23:47:09 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: length ::1
+2016-08-28 at 23:47:09 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: text_length ::2:: text ::-0
+2016-08-28 at 23:47:10 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: length ::2
+2016-08-28 at 23:47:10 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: text_length ::1:: text ::-
+2016-08-28 at 23:47:10 CST - :: action_type ::edit:: operation_type ::delete:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: length ::1
+2016-08-28 at 23:47:11 CST - :: action_type ::edit:: operation_type ::insert:: project ::Cal_GCD_V2:: filePath ::/Cal_GCD_V2/gcd.cpp:: location ::26,13:: fileOffset ::298:: text_length ::1:: text ::0
+2016-08-28 at 23:47:11 CST - :: action_type ::edit:: operation_type ::resource:: type ::changed:: resource_path ::/Cal_GCD_V2/gcd.cpp:: resourceType ::File:: fileRelatePath ::Cal_GCD_V2/gcd.cpp-c58db758e46dd9f8f545b6cdcf4878f8-f4b3371354b2eb579d2c9f135e2beb290a827bc2-1472399231113
+2016-08-28 at 23:47:11 CST - :: action_type ::operation:: operation_type ::excution:: message ::success-org.eclipse.ui.file.save-Object-null
+2016-08-28 at 23:47:15 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::446:: message ::23:47:14 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+Building file: ../gcd.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"gcd.d" -MT"gcd.o" -o "gcd.o" "../gcd.cpp"
+Finished building: ../gcd.cpp
+Building target: Cal_GCD_V2
+Invoking: Cross G++ Linker
+g++  -o "Cal_GCD_V2"  ./gcd.o ./main.o   
+Finished building target: Cal_GCD_V2
+
+23:47:15 Build Finished (took 686ms)
+
+
+2016-08-28 at 23:47:18 CST - :: action_type ::build:: project ::Cal_GCD_V2:: length ::168:: message ::23:47:17 **** Incremental Build of configuration Debug for project Cal_GCD_V2 ****
+make all 
+make: Nothing to be done for `all'.
+
+23:47:18 Build Finished (took 231ms)
+
+
+2016-08-28 at 23:47:18 CST - :: action_type ::run:: runType::normal:: type ::start:: project ::Cal_GCD_V2:: processId ::1d51dc4:: message ::DebugEvent[org.eclipse.cdt.dsf.gdb.launching.InferiorRuntimeProcess@1d51dc4, CREATE, UNSPECIFIED]
+2016-08-28 at 23:47:18 CST - :: action_type ::output:: runType ::normal:: project ::Cal_GCD_V2:: processId ::1d51dc4:: length ::3:: message ::5
+
+2016-08-28 at 23:47:18 CST - :: action_type ::run:: runType::normal:: type ::end:: project ::Cal_GCD_V2:: processId ::1d51dc4:: message ::DebugEvent[org.eclipse.cdt.dsf.gdb.launching.InferiorRuntimeProcess@1d51dc4, TERMINATE, UNSPECIFIED]
