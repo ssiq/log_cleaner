@@ -1,9 +1,13 @@
 import sys
 from collections import OrderedDict
-from log import TransformedLog
+from log import Log
 
 
 class LogTransformer(object):
+    '''
+    This class is used to load log file. It just has a transform function
+    used to transform the log string to formatted TransformedLog.
+    '''
     def __init__(self, verbose=False):
         self.verbose = verbose
 
@@ -67,7 +71,7 @@ class LogTransformer(object):
             action_number += 1
             if self.verbose:
                 print "{}:{}".format(action_number, action)
-        return TransformedLog(action_list)
+        return Log(action_list)
 
 
 if __name__ == '__main__':

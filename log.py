@@ -1,7 +1,10 @@
 from lxml import etree
 
 
-class TransformedLog(object):
+class Log(object):
+    '''
+    this class is created from the log file, it can be transformed to the different type
+    '''
     def __init__(self, log):
         self.log = log
 
