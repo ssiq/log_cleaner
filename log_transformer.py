@@ -1,6 +1,12 @@
 import sys
 from collections import OrderedDict
 from log import Log
+import os
+
+
+def combine_log(dir_path):
+    if os.path.exists(dir_path) and os.path.isdir(dir_path):
+        pass
 
 
 class LogTransformer(object):

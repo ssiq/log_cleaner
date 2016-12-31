@@ -35,8 +35,6 @@ class CppFile(object):
         del self.content[offset:offset+length]
 
     def __str__(self):
-        print len(self.content)
-        print self.content
         return ''.join(self.content)
 
     def __eq__(self, other):
@@ -68,6 +66,12 @@ class Project(object):
         if not isinstance(other, Project):
             return False
         return self.projects == other.projects
+
+    def __str__(self):
+        s = ''
+        for k, v in self.projects.items():
+            s += 'file {}\n {} \n\n'.format(k, str(v))
+        return s
 
 
 def rebuild_one_project(log, insert_max_length=50):
@@ -103,21 +107,31 @@ def scan_project(path):
     :param path: the project base path
     :return: a Project object built by scanning the project directory from the path
     '''
-    def inner_scan_project(path, project):
-        for entry in scandir.scandir(path):
+    def inner_scan_project(in_path, in_project):
+        for entry in scandir.scandir(in_path):
             # print entry.path
             if entry.is_dir():
-                inner_scan_project(entry.path, project)
+                inner_scan_project(entry.path, in_project)
             elif entry.is_file():
                 if entry.path.endswith('.cpp') or entry.path.endswith('.h'):
                     with open(entry.path, 'rb') as f:
                         c = f.read()
                         cpp_file = CppFile(list(c))
-                    p = entry.path[1:]
+                    p = entry.path[len(path):]
                     p = p.replace('\\', '/')
-                    project.add_file(p, cpp_file)
+                    in_project.add_file(p, cpp_file)
     project = Project()
     inner_scan_project(path, project)
     return project
 
+
+if __name__ == '__main__':
+    import sys
+    from utility import ZipExtractController
+    log_path, project_path = sys.argv[1], sys.argv[2]
+    with ZipExtractController(log_path) as log_dir_path, ZipExtractController(project_path) as project_dir_path:
+        # print project_dir_path
+        #project = scan_project(project_dir_path)
+        # print project
+        pass
 
