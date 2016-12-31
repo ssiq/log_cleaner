@@ -23,8 +23,10 @@ class CppFile(object):
         if offset > len(self.content):
             raise LogNoMatchException
 
-    def insert(self, offset, content):
+    def insert(self, offset, content, insert_max_length=50):
         self._check_offset(offset)
+        if insert_max_length != -1 and len(content) > insert_max_length:
+            raise LogNoMatchException
         for i in xrange(len(content)):
             self.content.insert(offset+i, content[i])
 
@@ -68,7 +70,7 @@ class Project(object):
         return self.projects == other.projects
 
 
-def rebuild_one_project(log):
+def rebuild_one_project(log, insert_max_length=50):
     '''
     :paam log: A TransformedLog object which contains the log information
     :return: a Project object rebuilt from the input log object
@@ -81,7 +83,7 @@ def rebuild_one_project(log):
                 offset = action[constant.FILEOFFSET]
                 file_path = action[constant.FILEPATH]
                 cpp_file = project.get_file(file_path)
-                cpp_file.insert(offset, text)
+                cpp_file.insert(offset, text, insert_max_length=insert_max_length)
             elif action[constant.OPERATION_TYPE] == constant.DELETE:
                 file_path = action[constant.FILEPATH]
                 offset = action[constant.FILEOFFSET]
