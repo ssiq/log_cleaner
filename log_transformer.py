@@ -1,13 +1,38 @@
 import sys
 from collections import OrderedDict
-from log import Log
 import os
 import gzip
+import datetime
+
+from utility import scan_dir, ZipExtractController
+from log import Log
 
 
 def read_log(dir_path):
+
+    def my_cmp(a, b):
+        to_datetime = lambda x: datetime.datetime.strptime(x[0]['time'], '%Y-%m-%d at %H:%M:%S %Z - ')
+        return to_datetime(a) < to_datetime(b)
+
+    log_list = []
+    t = LogTransformer(False)
     if os.path.exists(dir_path) and os.path.isdir(dir_path):
-        pass
+        for file_path in scan_dir(dir_path):
+            if file_path.endswith('.log'):
+                with open(file_path, 'rb') as f:
+                    log = t.transform(f.read())
+                    if log.to_list() is not None:
+                        log_list.append(log.to_list())
+            elif file_path.endswith('.log.gz'):
+                with gzip.open(file_path, 'rb') as f:
+                    log = t.transform(f.read())
+                    if log.to_list() is not None:
+                        log_list.append(log.to_list())
+        log_list.sort(cmp=my_cmp)
+        r = log_list[0]
+        for l in log_list[1:]:
+            r.extend(l)
+        return Log(r)
 
 
 class LogTransformer(object):
@@ -82,14 +107,16 @@ class LogTransformer(object):
 
 
 if __name__ == '__main__':
-    log_path = sys.argv[1]
-    to_path = sys.argv[2]
-    with open(log_path, 'rb') as f:
-        transformer = LogTransformer(False)
-        s = f.read()
-        log_parsed = transformer.transform(s)
+    # log_path = sys.argv[1]
+    # to_path = sys.argv[2]
+    # with open(log_path, 'rb') as f:
+    #     transformer = LogTransformer(False)
+    #     s = f.read()
+    #     log_parsed = transformer.transform(s)
         # for t in log_parsed:
             # print '{}'.format(t)
             # print etree.tostring(t)
 
-    log_parsed.write_xml(to_path)
+    # log_parsed.write_xml(to_path)
+    with ZipExtractController('test_data/2_log.zip') as f_path:
+        read_log(f_path)
