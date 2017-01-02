@@ -1,6 +1,8 @@
 import os
 import tempfile
 import shutil
+
+import scandir
 import subprocess32 as subprocess
 
 
@@ -34,3 +36,16 @@ class ZipExtractController(object):
             pass
         else:
             return False
+
+
+def scan_dir(dir_path):
+    def inner_scan_project(in_path):
+        for entry in scandir.scandir(in_path):
+            # print entry.path
+            if entry.is_dir():
+                for ii in inner_scan_project(entry.path):
+                    yield ii
+            elif entry.is_file():
+                yield entry.path
+    for i in inner_scan_project(dir_path):
+        yield i
