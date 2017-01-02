@@ -3,6 +3,7 @@ from collections import defaultdict
 import scandir
 
 import constant
+from log_transformer import read_log
 
 
 class LogNoMatchException(Exception):
@@ -24,14 +25,17 @@ class CppFile(object):
             raise LogNoMatchException
 
     def insert(self, offset, content, insert_max_length=50):
-        self._check_offset(offset)
-        if insert_max_length != -1 and len(content) > insert_max_length:
-            raise LogNoMatchException
+        offset = int(offset)
+        # self._check_offset(offset)
+        # if insert_max_length != -1 and len(content) > insert_max_length:
+        #     raise LogNoMatchException
         for i in xrange(len(content)):
             self.content.insert(offset+i, content[i])
 
     def remove(self, offset, length):
-        self._check_offset(offset)
+        offset = int(offset)
+        length = int(length)
+        # self._check_offset(offset)
         del self.content[offset:offset+length]
 
     def __str__(self):
@@ -80,7 +84,9 @@ def rebuild_one_project(log, insert_max_length=50):
     :return: a Project object rebuilt from the input log object
     '''
     project = Project()
-    for action in log:
+    for action in log.to_list():
+        print action
+        print
         if action[constant.ACTION_TYPE] == constant.EDIT:
             if action[constant.OPERATION_TYPE] == constant.INSERT:
                 text = action[constant.TEXT]
@@ -133,5 +139,7 @@ if __name__ == '__main__':
         # print project_dir_path
         #project = scan_project(project_dir_path)
         # print project
-        pass
+        log = read_log(log_dir_path)
+        rebuilt_project = rebuild_one_project(log, -1)
+        print rebuilt_project
 

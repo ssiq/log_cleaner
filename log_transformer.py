@@ -4,6 +4,8 @@ import os
 import gzip
 import datetime
 
+import chardet
+
 from utility import scan_dir, ZipExtractController
 from log import Log
 
@@ -97,6 +99,7 @@ class LogTransformer(object):
         begin = 0
         action_list = []
         action_number = 0
+        s = s.decode('gbk')
         while begin < len(s):
             action, begin = self._read_one_action(s, begin)
             action_list.append(action)
