@@ -122,4 +122,5 @@ if __name__ == '__main__':
 
     # log_parsed.write_xml(to_path)
     with ZipExtractController('test_data/2_log.zip') as f_path:
-        read_log(f_path)
+        read_log(f_path).write_xml('test_log_out.xml')
+        # print read_log(f_path).to_string()

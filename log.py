@@ -16,6 +16,7 @@ class Log(object):
 
     def _generate_one_action(self, action_dict):
         action = etree.Element('action')
+        print action_dict
         for k, v in action_dict.items():
             action.set(k, v)
         return action
