@@ -13,6 +13,8 @@ TYPE = 'type'
 REMOVED = 'removed'
 ADDED = 'added'
 
+EXCUTION = 'excution'
+MESSAGE = 'message'
 RESOURCE_PATH = 'resource_path'
 PROJECT = 'project'
 FILEPATH = 'filePath'

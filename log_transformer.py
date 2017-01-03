@@ -3,11 +3,13 @@ from collections import OrderedDict
 import os
 import gzip
 import datetime
+import json
 
 import chardet
 
 from utility import scan_dir, ZipExtractController
 from log import Log
+import constant
 
 
 def read_log(dir_path):
@@ -45,13 +47,13 @@ class LogTransformer(object):
     def __init__(self, verbose=False):
         self.verbose = verbose
 
-    def _read_to_end(self, s, begin, length=-1):
+    def _read_to_end(self, s, begin, length=-1, pre=False, one_sep=False):
         if length == -1:
             end = begin
-            pre = False
             action_end = False
             while True:
                 if end >= len(s):
+                    action_end = True
                     break
                 if s[end] == '\n':
                     action_end = True
@@ -61,10 +63,10 @@ class LogTransformer(object):
                         pre = True
                     else:
                         break
-                elif pre:
+                elif pre and not one_sep:
                     pre = False
                 end += 1
-            return s[begin:end-1], end + 1, action_end
+            return s[begin:end-(not one_sep)], end + 1, action_end
         else:
             return s[begin:begin + length], begin + length, True
 
@@ -72,6 +74,22 @@ class LogTransformer(object):
         k, begin, _ = self._read_to_end(s, begin)
         v, begin, action_end = self._read_to_end(s, begin, length)
         return k, v, begin, action_end
+
+    def _read_message(self, s, begin):
+        l = -1
+        message = []
+        while True:
+            t, begin, action_end = self._read_to_end(s, begin, length=l, pre=True, one_sep=True)
+            message.append(t)
+            if t == 'length' and not action_end:
+                t, begin, action_end = self._read_to_end(s, begin, length=l, pre=True, one_sep=True)
+                message.append(t)
+                l = int(t)
+                t, begin, action_end = self._read_to_end(s, begin, length=-1, pre=True, one_sep=True)
+                message.append(t)
+            if action_end:
+                break
+        return json.dumps(message), begin
 
     def _read_one_action(self, s, begin):
         action = OrderedDict()
@@ -81,8 +99,16 @@ class LogTransformer(object):
         action['time'] = time
         next_length = -1
         while True:
+            if constant.ACTION_TYPE in action and action[constant.ACTION_TYPE] == constant.OPERATION \
+                    and constant.OPERATION_TYPE in action and action[constant.OPERATION_TYPE] == constant.EXCUTION:
+                _, begin, _ = self._read_to_end(s, begin)
+                message, begin = self._read_message(s, begin)
+                action[constant.MESSAGE] = message
+                break
+
             k, v, begin, action_end = self._read_pair(s, begin, next_length)
             k = k.strip(' ')
+
             if k == 'length' or k == 'text_length':
                 if 'operation_type' in action and action['operation_type'] == 'delete':
                     next_length = -1
@@ -121,6 +147,6 @@ if __name__ == '__main__':
             # print etree.tostring(t)
 
     # log_parsed.write_xml(to_path)
-    with ZipExtractController('test_data/2_log.zip') as f_path:
+    with ZipExtractController('test_data/3_log.zip') as f_path:
         read_log(f_path).write_xml('test_log_out.xml')
         # print read_log(f_path).to_string()
