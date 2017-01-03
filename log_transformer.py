@@ -22,6 +22,7 @@ def read_log(dir_path):
     t = LogTransformer(False)
     if os.path.exists(dir_path) and os.path.isdir(dir_path):
         for file_path in scan_dir(dir_path):
+            print 'to read {}'.format(file_path)
             if file_path.endswith('.log'):
                 with open(file_path, 'rb') as f:
                     log = t.transform(f.read())
@@ -32,6 +33,7 @@ def read_log(dir_path):
                     log = t.transform(f.read())
                     if log.to_list() is not None:
                         log_list.append(log.to_list())
+            print 'read ended {}'.format(file_path)
         log_list.sort(cmp=my_cmp)
         r = log_list[0]
         for l in log_list[1:]:
@@ -96,6 +98,8 @@ class LogTransformer(object):
         time = ''
         while len(time) == 0:
             time, begin, _ = self._read_to_end(s, begin)
+            if begin > len(s):
+                return False, begin
         action['time'] = time
         next_length = -1
         while True:
@@ -128,10 +132,13 @@ class LogTransformer(object):
         s = s.decode('gbk')
         while begin < len(s):
             action, begin = self._read_one_action(s, begin)
+            if not action:
+                break
             action_list.append(action)
             action_number += 1
             if self.verbose:
                 print "{}:{}".format(action_number, action)
+                print "begin:{}, length of s:{}".format(begin, len(s))
         return Log(action_list)
 
 

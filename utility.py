@@ -18,14 +18,20 @@ def get_project_by_path(path):
 
 
 class ZipExtractController(object):
-    def __init__(self, zip_path):
-        self.zip_path = zip_path
+    def __init__(self, zip_paths):
+        if isinstance(zip_paths, str):
+            self.zip_paths = [zip_paths]
+        elif isinstance(zip_paths, list):
+            self.zip_paths = zip_paths
+        else:
+            raise ValueError('{} parameter error'.format(self.__class__))
         self.temp_dir = None
 
     def __enter__(self):
         self.temp_dir = tempfile.mkdtemp(dir='/tmp')
-        ex = ['unzip', self.zip_path, '-d', self.temp_dir]
-        subprocess.call(ex)
+        for zip_path in self.zip_paths:
+            ex = ['unzip', zip_path, '-d', tempfile.mkdtemp(dir=self.temp_dir)]
+            subprocess.call(ex)
         return self.temp_dir
 
     def __exit__(self, exc_type, exc_val, exc_tb):

@@ -22,11 +22,12 @@ class CppFile(object):
 
     def _check_offset(self, offset):
         if offset > len(self.content):
-            raise LogNoMatchException
+            # raise LogNoMatchException
+            pass
 
     def insert(self, offset, content, insert_max_length=50):
         offset = int(offset)
-        # self._check_offset(offset)
+        self._check_offset(offset)
         # if insert_max_length != -1 and len(content) > insert_max_length:
         #     raise LogNoMatchException
         for i in xrange(len(content)):
@@ -35,11 +36,11 @@ class CppFile(object):
     def remove(self, offset, length):
         offset = int(offset)
         length = int(length)
-        # self._check_offset(offset)
+        self._check_offset(offset)
         del self.content[offset:offset+length]
 
     def __str__(self):
-        return ''.join(self.content)
+        return u''.join(self.content)
 
     def __eq__(self, other):
         if not isinstance(other, CppFile):
@@ -72,9 +73,9 @@ class Project(object):
         return self.projects == other.projects
 
     def __str__(self):
-        s = ''
+        s = u''
         for k, v in self.projects.items():
-            s += 'file {}\n {} \n\n'.format(k, str(v))
+            s += u'file {} \n'.format(k) + v.__str__() + u' \n\n'
         return s
 
 
@@ -85,8 +86,6 @@ def rebuild_one_project(log, insert_max_length=50):
     '''
     project = Project()
     for action in log.to_list():
-        print action
-        print
         if action[constant.ACTION_TYPE] == constant.EDIT:
             if action[constant.OPERATION_TYPE] == constant.INSERT:
                 text = action[constant.TEXT]
@@ -135,11 +134,11 @@ if __name__ == '__main__':
     import sys
     from utility import ZipExtractController
     log_path, project_path = sys.argv[1], sys.argv[2]
-    with ZipExtractController(log_path) as log_dir_path, ZipExtractController(project_path) as project_dir_path:
+    with ZipExtractController([log_path, ]) as log_dir_path, ZipExtractController(project_path) as project_dir_path:
         # print project_dir_path
-        #project = scan_project(project_dir_path)
+        # project = scan_project(project_dir_path)
         # print project
         log = read_log(log_dir_path)
         rebuilt_project = rebuild_one_project(log, -1)
-        print rebuilt_project
-
+        print rebuilt_project.__str__()
+        # print 'project and rebuilt the same: {}'.format(rebuilt_project == project)
